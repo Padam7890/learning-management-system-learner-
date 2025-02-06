@@ -32,9 +32,9 @@ export function AllMaterials() {
   return (
     <section className="space-y-6 py-8">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-semibold tracking-tight">
+        <h2 className="text-2xl font-semibold tracking-tight text-center">
           All Materials
-          <span className="ml-2 text-sm text-muted-foreground">27</span>
+          <span className="ml-2 text-base text-muted-foreground bg-slate-200 p-1 rounded-md">27</span>
         </h2>
       </div>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -45,6 +45,7 @@ export function AllMaterials() {
               variant={selectedStatus === status ? "default" : "outline"}
               onClick={() => setSelectedStatus(status)}
               size="sm"
+              className="rouned-full"
             >
               {status}
             </Button>
