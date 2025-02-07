@@ -14,7 +14,7 @@ export function CourseCard({ course }: CourseCardProps) {
     <Card className="overflow-hidden">
       <CardHeader className="p-0">
         <div className="relative aspect-video">
-          <Image src={course.thumbnail || "/placeholder.svg"} alt={course.title} fill className="object-cover" />
+          <Image src={course.thumbnail || "/placeholder.svg"} alt={course.title!} fill className="object-cover" />
           <div className="absolute right-2 top-2 rounded bg-white/90 px-2 py-1 text-xs font-medium">{course.type}</div>
         </div>
       </CardHeader>
@@ -23,7 +23,7 @@ export function CourseCard({ course }: CourseCardProps) {
           <h3 className="font-semibold leading-none tracking-tight">{course.title}</h3>
           <div className="flex items-center gap-3 text-sm text-muted-foreground">
             <span className="bg-primary-foreground px-3 py-2 rounded-full">
-              {course.materials ?? course.chapters ?? course.questions ?? course.path}{" "}
+              {/* {course.materials ?? course.chapters ?? course.questions ?? course.path}{" "} */}
               {course.materials ? "Materials" : course.chapters ? "Chapters" : course.questions ? "Questions" : "Path"}
             </span>
             <span className={course.urgency === "Urgent" ? "text-red-500 bg-primary-foreground px-3 py-2 rounded-full" : "rounded-muted-bg"}>{course.urgency}</span>
@@ -35,7 +35,7 @@ export function CourseCard({ course }: CourseCardProps) {
             <p className=" text-sm font-bold"> 20 <span className=" text-muted-foreground">pts</span> </p>
             </div>
             <Button variant="outline" size="sm">
-              <Link href={"/course/1"}>
+              <Link href={`course/${course.uid}`}>
               {course.status === "Not Started" ? "Start" : course.status === "In Progress" ? "Continue" : "View"}
 
               </Link>

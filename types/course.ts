@@ -1,16 +1,23 @@
-export interface Course {
-  id: string
+export interface Chapter {
+  id: number
   title: string
-  type: "Course" | "Quiz" | "Page" | "Learning Path" | "Assignment"
+  content: string
+}
+
+export interface Course {
+  id?: number
+  uid: string
+  title?: string
+  type?: "Course" | "Quiz" | "Page" | "Learning Path" | "Assignment"
   progress?: number
-  status: "Not Started" | "In Progress" | "Completed"
-  thumbnail: string
+  status?: "Not Started" | "In Progress" | "Completed"
+  thumbnail?: string
   materials?: number
-  chapters?: number
+  chapters: Chapter[]
   questions?: number
   path?: number
-  category: string
-  urgency: "Urgent" | "Not Urgent"
+  category?: string
+  urgency?: "Urgent" | "Not Urgent"
   passingPoints?: number
 }
 

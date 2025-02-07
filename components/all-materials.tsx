@@ -5,23 +5,8 @@ import { CourseCard } from "@/components/course-card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Filter, LayoutGrid, List, Search } from "lucide-react"
-import type { Course } from "@/types/course"
+import { allCourses } from "@/data/coursedata"
 
-const allCourses: Course[] = [
-  {
-    id: "3",
-    title: "5 Steps Optimizing User Experience",
-    type: "Quiz",
-    status: "Not Started",
-    thumbnail:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lms%20design-HOB97hHk2DOzhcMWSuAvL5DTRUoNs3.png",
-    questions: 20,
-    category: "UI/UX Design",
-    urgency: "Urgent",
-    passingPoints: 20,
-  },
-  // Add more courses here...
-]
 
 const statusFilters = ["All Status", "Not Started", "In Progress", "Completed"]
 
